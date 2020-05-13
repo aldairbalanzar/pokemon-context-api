@@ -15,6 +15,10 @@ body {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        @media (max-width: 768px) {
+            width: 100%;
+            background-color: lightblue;
+        }
 
         .pokemon-card {
             width: 10%;
@@ -31,6 +35,13 @@ body {
             }
             img {
                 width: 88px;
+                @media (max-width: 768px) {
+                    width: 72px;
+                }
+            }
+            @media (max-width: 768px) {
+                width: 24%;
+                margin: 3% 1%;
             }
         }
     }
@@ -46,6 +57,10 @@ body {
         &:hover {
             background-color: lightgrey;
             transition: .2s
+        }
+        @media (max-width: 768px) {
+            width: 16%;
+            margin: 2% 6%;
         }
     }
   }
