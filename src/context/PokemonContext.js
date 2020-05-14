@@ -20,7 +20,7 @@ export const PokemonProvider = (props) => {
         .then(res => {
           setPokemonList(prevState =>  [...prevState,
              {...res.data,
-              img: `https://pokeres.bastionbot.org/images/pokemon/${res.data.id}.png` || res.data.sprites.front_default
+              img: `https://pokeres.bastionbot.org/images/pokemon/${res.data.id}.png`
             }
           ])
         })
@@ -37,8 +37,6 @@ export const PokemonProvider = (props) => {
   useEffect(() => {
     fetchPokemonData();
   }, []);
-    
-      // console.log('pokemonList: ', pokemonList)
       
     return(
         <PokemonContext.Provider value={[pokemonList, fetchPokemonData, next, prev]}>
