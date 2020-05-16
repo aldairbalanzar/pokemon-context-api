@@ -17,12 +17,15 @@ export const PokemonProvider = (props) => {
       setPrev(res.data.previous);
       res.data.results.map(item => {
         Axios.get(item.url)
-        .then(res => {
-          setPokemonList(prevState =>  [...prevState,
+        .then(async res => {
+          await setPokemonList(prevState =>  [...prevState,
              {...res.data,
               img: `https://pokeres.bastionbot.org/images/pokemon/${res.data.id}.png`
             }
-          ])
+          ]);
+          setPokemonList(prevState => prevState.sort((a, b) => {
+            return a.id - b.id;
+          }))
         })
         .catch(err => {
           console.log('2nd axios: ', err)
