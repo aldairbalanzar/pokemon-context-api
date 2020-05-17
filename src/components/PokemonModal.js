@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PokemonModal = ({ currentPokemonData, handleModal }) => {
+const PokemonModal = ({ currentPokemonData }) => {
     const { name, types, img, stats } = currentPokemonData
     //checks if pokemon is more than one type, if so... 
     //it makes sure to add a '/' to better separate the two types
@@ -82,12 +82,6 @@ const PokemonModal = ({ currentPokemonData, handleModal }) => {
                         })}
                 </div>
             </div>
-            <button style={{
-                float: 'right', margin: '3% 0 %1', padding: '1% 2%'
-                }}
-                onClick={handleModal}>
-                close
-                </button>
         </section>
     )
 }

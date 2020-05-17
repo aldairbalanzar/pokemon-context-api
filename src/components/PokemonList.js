@@ -57,7 +57,10 @@ const PokemonList = () => {
                 
                 <Modal isOpen={modalOpen} onRequestClose={handleModal}>
                     <PokemonModal currentPokemonData={currentPokemonData} />
-                    
+                    <button style={{float: 'right', margin: '3% 0 %1', padding: '1% 2%'}}
+                    onClick={handleModal}>
+                    close
+                    </button>
                 </Modal>
                 <div className='pagination-button-container'>
                     <button className='pagination-button' onClick={changePrev}>previous</button>
