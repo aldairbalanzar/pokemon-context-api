@@ -11,11 +11,11 @@ Modal.setAppElement('#root')
 toast.configure()
 const PokemonList = () => {
     const [ pokemonList, fetchPokemonData, next, prev ] = useContext(PokemonContext);
-    const [currentPokemonData, setCurrentPokemonData] = useState({})
+    const [currentPokemonData, setCurrentPokemonData] = useState()
     const [modalOpen, setModalOpen] = useState(false)
 
-    // console.log('pokemonList component: ', pokemonList )
-    console.log('currenPokemonData: ', currentPokemonData);
+    console.log('pokemonList component: ', pokemonList )
+    // console.log('currenPokemonData: ', currentPokemonData);
     // console.log(next);
     // console.log(prev);
 
@@ -38,7 +38,7 @@ const PokemonList = () => {
     const handleModal = (pokemonId) => {
         if(modalOpen === false){
             setModalOpen(true)
-            setCurrentPokemonData(pokemonList[pokemonId - 1]);
+            setCurrentPokemonData(pokemonList.find(item => item.id === pokemonId));
         } else {
             setModalOpen(false)
         }
