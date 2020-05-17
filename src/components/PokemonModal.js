@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const PokemonModal = () => {
-    const [currentPokemon, setCurrentPokemon] = useState();
-
+const PokemonModal = ({ currentPokemonData }) => {
     return(
-        <div>
-            hey
-        </div>
+        <section>
+            <div>
+                <h1>{currentPokemonData.name}</h1>
+                {currentPokemonData.types.map(item => {
+                    return(
+                    <h3>{item.type.name}</h3>
+                    )
+                })}
+                <img src={currentPokemonData.img} alt={'pokemon', currentPokemonData.name}/>
+            </div>
+        </section>
     )
 }
 

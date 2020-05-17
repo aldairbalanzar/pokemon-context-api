@@ -10,9 +10,11 @@ import '../App.scss';
 toast.configure()
 const PokemonList = () => {
     const [ pokemonList, fetchPokemonData, next, prev ] = useContext(PokemonContext);
+    const [currentPokemonData, setCurrentPokemonData] = useState({})
     const [modalOpen, setModalOpen] = useState(false)
 
     // console.log('pokemonList component: ', pokemonList )
+    console.log(currentPokemonData.types);
     // console.log(next);
     // console.log(prev);
 
@@ -32,8 +34,13 @@ const PokemonList = () => {
         })
     };
 
-    const handleModal = () => {
-        setModalOpen(!modalOpen)
+    const handleModal = (pokemonId) => {
+        if(modalOpen === false){
+            setModalOpen(true)
+            setCurrentPokemonData(pokemonList[pokemonId - 1]);
+        } else {
+            setModalOpen(false)
+        }
     }
 
     return(
@@ -41,13 +48,14 @@ const PokemonList = () => {
             <section className='pokemon-list'>
                 {pokemonList.map(data => {
                     return(
-                        <div className='pokemon-card' onClick={handleModal}>
-                            <PokemonCard data={data}/>
+                        <div className='pokemon-card' onClick={() => handleModal(data.id)} key={data.id}>
+                            <PokemonCard data={data} key={data.id}/>
                         </div>
                     )
                 })}
-                <Modal isOpen={modalOpen}>
-                    <PokemonModal />
+                
+                <Modal isOpen={modalOpen} onRequestClose={handleModal}>
+                    <PokemonModal currentPokemonData={currentPokemonData} />
                     <button onClick={handleModal}>close</button>
                 </Modal>
                 <button className='pagination-button' onClick={changePrev}>previous</button>
