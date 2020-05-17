@@ -7,6 +7,7 @@ import PokemonCard from '../components/PokemonCard';
 import PokemonModal from '../components/PokemonModal';
 import '../App.scss';
 
+Modal.setAppElement('#root')
 toast.configure()
 const PokemonList = () => {
     const [ pokemonList, fetchPokemonData, next, prev ] = useContext(PokemonContext);
@@ -14,7 +15,7 @@ const PokemonList = () => {
     const [modalOpen, setModalOpen] = useState(false)
 
     // console.log('pokemonList component: ', pokemonList )
-    console.log(currentPokemonData.types);
+    // console.log(currentPokemonData.types);
     // console.log(next);
     // console.log(prev);
 
@@ -58,8 +59,10 @@ const PokemonList = () => {
                     <PokemonModal currentPokemonData={currentPokemonData} />
                     <button onClick={handleModal}>close</button>
                 </Modal>
-                <button className='pagination-button' onClick={changePrev}>previous</button>
-                <button className='pagination-button' onClick={changeNext}>next</button>
+                <div className='pagination-button-container'>
+                    <button className='pagination-button' onClick={changePrev}>previous</button>
+                    <button className='pagination-button' onClick={changeNext}>next</button>
+                </div>
             </section>
         </>
     )

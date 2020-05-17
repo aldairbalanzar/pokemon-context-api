@@ -3,8 +3,8 @@ import React from 'react';
 const PokemonCard = ({data}) => {
     return(
         <div key={data.id}>
-            <p className='pokemon-name'>{data.name}</p>
-            <img className='pokemon-img' src={data.img} alt=""/>
+            <h2 className='pokemon-name'>{data.name}</h2>
+            <img className='pokemon-img' src={data.img} alt={`pokemon, ${data.name}`}/>
         </div>
     )
 }

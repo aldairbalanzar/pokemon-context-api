@@ -3,14 +3,14 @@ import React from 'react';
 const PokemonModal = ({ currentPokemonData }) => {
     return(
         <section>
-            <div>
+            <div className='modal'>
                 <h1>{currentPokemonData.name}</h1>
                 {currentPokemonData.types.map(item => {
                     return(
-                    <h3>{item.type.name}</h3>
+                    <h3 key={item.slot}>{item.type.name}</h3>
                     )
                 })}
-                <img src={currentPokemonData.img} alt={'pokemon', currentPokemonData.name}/>
+                <img className='modal-img' src={currentPokemonData.img} alt={`pokemon, ${currentPokemonData.name}`}/>
             </div>
         </section>
     )
