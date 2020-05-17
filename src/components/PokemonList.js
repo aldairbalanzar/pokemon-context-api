@@ -14,8 +14,8 @@ const PokemonList = () => {
     const [currentPokemonData, setCurrentPokemonData] = useState()
     const [modalOpen, setModalOpen] = useState(false)
 
-    console.log('pokemonList component: ', pokemonList )
-    // console.log('currenPokemonData: ', currentPokemonData);
+    // console.log('pokemonList component: ', pokemonList )
+    console.log('currenPokemonData: ', currentPokemonData);
     // console.log(next);
     // console.log(prev);
 
