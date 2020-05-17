@@ -59,7 +59,7 @@ const PokemonModal = ({ currentPokemonData }) => {
                         src={currentPokemonData.img}
                         alt={`pokemon, ${currentPokemonData.name}`}
                         style={{
-                            width: '250px'
+                            width: '210px'
                         }}/>
                     </div>
                     
