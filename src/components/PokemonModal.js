@@ -49,11 +49,6 @@ const PokemonModal = ({ currentPokemonData }) => {
                 flexWrap: 'wrap',
                 margin: '5% 0 0'
                 }}>
-                    <div style={{
-                    display: 'flex',
-                    width: '100%',
-                    justifyContent: 'center'
-                    }}>   
                         {/* Pokemon Image */}
                         <img
                         src={currentPokemonData.img}
@@ -61,15 +56,8 @@ const PokemonModal = ({ currentPokemonData }) => {
                         style={{
                             width: '210px'
                         }}/>
-                    </div>
                     
-                    {/* pokemon stats */}
-                    <div style={{
-                    display: 'flex',
-                    width: '100%',
-                    justifyContent: 'center',
-                    flexWrap: 'wrap'
-                    }}>
+                        {/* Pokemon Stats */}
                         <p><strong>Stats: </strong></p>
                         {currentPokemonData.stats.map(item => {
                             return(
@@ -82,7 +70,6 @@ const PokemonModal = ({ currentPokemonData }) => {
                                 </p>
                             )
                         })}
-                    </div>
                 </div>
             </div>
         </section>
