@@ -1,10 +1,11 @@
 import React from 'react';
 
 const PokemonModal = ({ currentPokemonData }) => {
+    const { name, types, img, stats } = currentPokemonData
     //checks if pokemon is more than one type, if so... 
     //it makes sure to add a '/' to better separate the two types
-    if(currentPokemonData.types.length > 1){
-        currentPokemonData.types[0].type.name = `${currentPokemonData.types[0].type.name}/`         
+    if(types.length > 1){
+        types[0].type.name = `${types[0].type.name}/`         
     };
 
     return(
@@ -25,7 +26,7 @@ const PokemonModal = ({ currentPokemonData }) => {
                     width: '100%',
                     justifyContent: 'center'
                     }}>
-                        {currentPokemonData.name}
+                        {name}
                     </h1>
                 </div>
 
@@ -36,7 +37,7 @@ const PokemonModal = ({ currentPokemonData }) => {
                 justifyContent: 'center'
                 }}>
                     <p><strong>Type: </strong>{
-                    currentPokemonData.types.map(item => {
+                    types.map(item => {
                     return <span key={item.slot}>{item.type.name}</span>
                     })
                     }</p>
@@ -51,8 +52,8 @@ const PokemonModal = ({ currentPokemonData }) => {
                 }}>
                         {/* Pokemon Image */}
                         <img
-                        src={currentPokemonData.img}
-                        alt={`pokemon, ${currentPokemonData.name}`}
+                        src={img}
+                        alt={`pokemon, ${name}`}
                         style={{
                             width: '210px',
                             height: '210px'
@@ -60,7 +61,7 @@ const PokemonModal = ({ currentPokemonData }) => {
                     
                         {/* Pokemon Stats */}
                         <p><strong>Stats: </strong></p>
-                        {currentPokemonData.stats.map(item => {
+                        {stats.map(item => {
                             return(
                                 <p style={{
                                 display: 'flex',
