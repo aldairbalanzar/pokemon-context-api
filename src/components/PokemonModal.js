@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PokemonModal = ({ currentPokemonData }) => {
+const PokemonModal = ({ currentPokemonData, handleModal }) => {
     const { name, types, img, stats } = currentPokemonData
     //checks if pokemon is more than one type, if so... 
     //it makes sure to add a '/' to better separate the two types
@@ -58,15 +58,23 @@ const PokemonModal = ({ currentPokemonData }) => {
                             width: '210px',
                             height: '210px'
                         }}/>
-                    
+                        
                         {/* Pokemon Stats */}
-                        <p><strong>Stats: </strong></p>
+                        <p style={{
+                        display: 'flex',
+                        width: '100%',
+                        justifyContent: 'center',
+                        margin: '5% 0 0'
+                        }}>
+                        <strong>Stats: </strong>
+                        </p>
                         {stats.map(item => {
                             return(
                                 <p style={{
                                 display: 'flex',
                                 width: '100%',
-                                justifyContent: 'center'
+                                justifyContent: 'center',
+                                margin: '1% 0 0'
                                 }} key={item.stat.name}>
                                 {`${item.stat.name}: ${item.base_stat}`}
                                 </p>
@@ -74,6 +82,12 @@ const PokemonModal = ({ currentPokemonData }) => {
                         })}
                 </div>
             </div>
+            <button style={{
+                float: 'right', margin: '3% 0 %1', padding: '1% 2%'
+                }}
+                onClick={handleModal}>
+                close
+                </button>
         </section>
     )
 }
