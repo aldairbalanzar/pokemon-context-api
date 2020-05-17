@@ -1,41 +1,79 @@
 import React from 'react';
 
 const PokemonModal = ({ currentPokemonData }) => {
+    //checks if pokemon is more than one type, if so... 
+    //it makes sure to add a '/' to better separate the two types
+    if(currentPokemonData.types.length > 1){
+        currentPokemonData.types[0].type.name = `${currentPokemonData.types[0].type.name}/`         
+    }
     return(
         <section>
+            
             <div style={{
                 width: '90%',
-                margin: '3% auto 1%',
+                margin: '2% auto 0',
                 display: 'flex',
-                justifyContent: 'flex-left',
+                justifyContent: 'center',
                 flexWrap: 'wrap'
             }}>
-                <h1
-                style={{
-                    width: '100%',
-                    margin: '0'
-                }}>
-                    {currentPokemonData.name}
-                </h1>
+
+                {/* Pokemon Name */}
                 <div>
-                    <h4>Type: </h4>
-                        {currentPokemonData.types.map(item => {
+                    <h1 style={{
+                        display: 'flex',
+                        width: '100%',
+                        justifyContent: 'center'
+                    }}>
+                        {currentPokemonData.name}
+                    </h1>
+                </div>
+
+                {/* Pokemon Type */}
+                <div style={{
+                    display: 'flex',
+                    width: '100%',
+                    justifyContent: 'center'
+                }}>
+                    <p><strong>Type: </strong>
+                    {
+                    currentPokemonData.types.map(item => {
+                    return <span key={item.slot}>{item.type.name}</span>
+                    })
+                    }</p>
+                </div>
+                
+                <div style={{
+                    display: 'flex',
+                    width: '100%',
+                    justifyContent: 'center',
+                    margin: '6% 0 0'
+                }}>
+                    <div style={{
+                        width: '40%'
+                    }}>   
+                        {/* Pokemon Image */}
+                        <img
+                        src={currentPokemonData.img}
+                        alt={`pokemon, ${currentPokemonData.name}`}
+                        style={{
+                            width: '250px'
+                        }}
+                        />
+                    </div>
+                    
+                    {/* pokemon stats */}
+                    <div style={{
+                        width: '40%'
+                    }}>
+                        <p><strong>Stats: </strong></p>
+                        {currentPokemonData.stats.map(item => {
                             return(
-                            <p key={item.slot}>{item.type.name}</p>
+                            <p key={item.stat.name}>
+                                {`${item.stat.name}: ${item.base_stat}`}
+                            </p>
                             )
                         })}
-                </div>
-                <div
-                style={{
-                    width: '100%'
-                }}>   
-                    <img className='modal-img'
-                    src={currentPokemonData.img}
-                    alt={`pokemon, ${currentPokemonData.name}`}
-                    style={{
-                        width: '250px'
-                    }}
-                    />
+                    </div>
                 </div>
             </div>
         </section>
