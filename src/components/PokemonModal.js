@@ -12,7 +12,7 @@ const PokemonModal = ({ currentPokemonData }) => {
         <section>
             
             <div style={{
-            width: '90%',
+            width: '96%',
             margin: '2% auto 0',
             display: 'flex',
             justifyContent: 'center',
