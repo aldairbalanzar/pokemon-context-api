@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { PokemonContext } from '../context/PokemonContext'
+import { PokemonContext } from '../context/PokemonContext';
+import Axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Modal from 'react-modal';
@@ -36,9 +37,19 @@ const PokemonList = () => {
     };
 
     const handleModal = (pokemonId) => {
+        let currentPokemon = {}
         if(modalOpen === false){
-            setModalOpen(true)
-            setCurrentPokemonData(pokemonList.find(item => item.id === pokemonId));
+            Axios.get(`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`)
+            .then(res => {
+                console.log(res.data)
+                currentPokemon = pokemonList.find(item => item.id === pokemonId)
+                setCurrentPokemonData({
+                    ...currentPokemon,
+                    jName: res.data.names[1].name
+                });
+                setModalOpen(true)
+            })
+            .catch(err => console.log(err))
         } else {
             setModalOpen(false)
         }
