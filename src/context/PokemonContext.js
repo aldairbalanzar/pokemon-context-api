@@ -20,7 +20,8 @@ export const PokemonProvider = (props) => {
         Axios.get(item.url)
         .then(res => {
           dataList = [...dataList, {...res.data,
-            img: `https://pokeres.bastionbot.org/images/pokemon/${res.data.id}.png`
+            img: `https://pokeres.bastionbot.org/images/pokemon/${res.data.id}.png`,
+            name: res.data.name.charAt(0).toUpperCase() + res.data.name.slice(1)
           }]
           dataList.sort((a, b) => {
             return a.id - b.id;
