@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext, useState } from 'react';
 import { PokemonContext } from '../context/PokemonContext'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,6 +10,7 @@ import '../App.scss';
 toast.configure()
 const PokemonList = () => {
     const [ pokemonList, fetchPokemonData, next, prev ] = useContext(PokemonContext);
+    const [modalOpen, setModalOpen] = useState(false)
 
     // console.log('pokemonList component: ', pokemonList )
     // console.log(next);
@@ -21,7 +22,7 @@ const PokemonList = () => {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 1500
         })
-    }
+    };
 
     const changePrev = () => {
         fetchPokemonData(prev)
@@ -29,6 +30,10 @@ const PokemonList = () => {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 1500
         })
+    };
+
+    const handleModal = () => {
+        setModalOpen(!modalOpen)
     }
 
     return(
@@ -36,11 +41,14 @@ const PokemonList = () => {
             <section className='pokemon-list'>
                 {pokemonList.map(data => {
                     return(
-                        <PokemonCard data={data} />
+                        <div className='pokemon-card' onClick={handleModal}>
+                            <PokemonCard data={data}/>
+                        </div>
                     )
                 })}
-                <Modal isOpen={false}>
+                <Modal isOpen={modalOpen}>
                     <PokemonModal />
+                    <button onClick={handleModal}>close</button>
                 </Modal>
                 <button className='pagination-button' onClick={changePrev}>previous</button>
                 <button className='pagination-button' onClick={changeNext}>next</button>

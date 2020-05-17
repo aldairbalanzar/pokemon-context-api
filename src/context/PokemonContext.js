@@ -9,6 +9,8 @@ export const PokemonProvider = (props) => {
   const [prev, setPrev] = useState();
   
   const fetchPokemonData = api => {
+    let dataList = [];
+    
     setPokemonList([])
     Axios.get( api || `https://pokeapi.co/api/v2/pokemon?limit=21`)
     .then(res => {
@@ -17,15 +19,14 @@ export const PokemonProvider = (props) => {
       setPrev(res.data.previous);
       res.data.results.map(item => {
         Axios.get(item.url)
-        .then(async res => {
-          await setPokemonList(prevState =>  [...prevState,
-             {...res.data,
-              img: `https://pokeres.bastionbot.org/images/pokemon/${res.data.id}.png`
-            }
-          ]);
-          setPokemonList(prevState => prevState.sort((a, b) => {
+        .then(res => {
+          dataList = [...dataList, {...res.data,
+            img: `https://pokeres.bastionbot.org/images/pokemon/${res.data.id}.png`
+          }]
+          dataList.sort((a, b) => {
             return a.id - b.id;
-          }))
+          });
+          setPokemonList(dataList);
         })
         .catch(err => {
           console.log('2nd axios: ', err)
