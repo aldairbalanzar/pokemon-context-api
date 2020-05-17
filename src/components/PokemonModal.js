@@ -12,7 +12,7 @@ const PokemonModal = ({ currentPokemonData }) => {
         <section>
             
             <div style={{
-            width: '96%',
+            width: '90%',
             margin: '2% auto 0',
             display: 'flex',
             justifyContent: 'center',
@@ -26,21 +26,15 @@ const PokemonModal = ({ currentPokemonData }) => {
                     width: '100%',
                     justifyContent: 'center'
                     }}>
-                        {name}/{jName}
+                        {name}/
                     </h1>
-                </div>
-
-                {/* Pokemon Type */}
-                <div style={{
-                display: 'flex',
-                width: '100%',
-                justifyContent: 'center'
-                }}>
-                    <p><strong>Type: </strong>{
-                    types.map(item => {
-                    return <span key={item.slot}>{item.type.name}</span>
-                    })
-                    }</p>
+                    <h1 style={{
+                    display: 'flex',
+                    width: '100%',
+                    justifyContent: 'center'
+                    }}>
+                        {jName}
+                    </h1>
                 </div>
                 
                 <div style={{
@@ -50,59 +44,73 @@ const PokemonModal = ({ currentPokemonData }) => {
                 flexWrap: 'wrap',
                 margin: '5% 0 0'
                 }}>
-                        {/* Pokemon Image */}
-                        <img
-                        src={img}
-                        alt={`pokemon, ${name}`}
-                        style={{
-                            width: '210px',
-                            height: '210px'
-                        }}/>
-                        
-                        {/* Pokemon Stats */}
-                        <p style={{
-                        display: 'flex',
-                        width: '100%',
-                        justifyContent: 'center',
-                        margin: '5% 0 0'
-                        }}>
-                        <strong>Stats: </strong>
-                        </p>
-                        {stats.map(item => {
-                            return(
-                                <p style={{
-                                display: 'flex',
-                                width: '100%',
-                                justifyContent: 'center',
-                                margin: '1% 0 0'
-                                }} key={item.stat.name}>
-                                {`${item.stat.name}: ${item.base_stat}`}
-                                </p>
-                            )
-                        })}
 
-                        {/* Pokemon Abilities */}
-                        <p style={{
-                        display: 'flex',
-                        width: '100%',
-                        justifyContent: 'center',
-                        margin: '5% 0 0'
-                        }}>
-                        <strong>Abilities: </strong>
-                        </p>
-                        {abilities.map(item => {
-                            return(
-                                <p style={{
-                                display: 'flex',
-                                flexWrap: 'wrap',
-                                width: '100%',
-                                justifyContent: 'center',
-                                margin: '1% 0 0'
-                                }} key={item.ability.name}>
-                                {`${item.ability.name}`}
-                                </p>
-                            )
-                        })}
+                    {/* Pokemon Image */}
+                    <img
+                    src={img}
+                    alt={`pokemon, ${name}`}
+                    style={{
+                        width: '210px',
+                        height: '210px'
+                    }}/>
+
+                     {/* Pokemon Type */}
+                    <div style={{
+                    display: 'flex',
+                    width: '100%',
+                    justifyContent: 'center'
+                    }}>
+                        <p><strong>Type: </strong>{
+                        types.map(item => {
+                        return <span key={item.slot}>{item.type.name}</span>
+                        })
+                        }</p>
+                    </div>
+                    
+                    {/* Pokemon Stats */}
+                    <p style={{
+                    display: 'flex',
+                    width: '100%',
+                    justifyContent: 'center',
+                    margin: '5% 0 0'
+                    }}>
+                    <strong>Stats: </strong>
+                    </p>
+                    {stats.map(item => {
+                        return(
+                            <p style={{
+                            display: 'flex',
+                            width: '100%',
+                            justifyContent: 'center',
+                            margin: '1% 0 0'
+                            }} key={item.stat.name}>
+                            {`${item.stat.name}: ${item.base_stat}`}
+                            </p>
+                        )
+                    })}
+
+                    {/* Pokemon Abilities */}
+                    <p style={{
+                    display: 'flex',
+                    width: '100%',
+                    justifyContent: 'center',
+                    margin: '5% 0 0'
+                    }}>
+                    <strong>Abilities: </strong>
+                    </p>
+                    {abilities.map(item => {
+                        return(
+                            <p style={{
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            width: '100%',
+                            justifyContent: 'center',
+                            margin: '1% 0 0'
+                            }} key={item.ability.name}>
+                            {`${item.ability.name}`}
+                            </p>
+                        )
+                    })}
 
                 </div>
             </div>
