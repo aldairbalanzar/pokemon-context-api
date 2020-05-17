@@ -15,7 +15,7 @@ const PokemonList = () => {
     const [modalOpen, setModalOpen] = useState(false)
 
     // console.log('pokemonList component: ', pokemonList )
-    // console.log(currentPokemonData.types);
+    console.log('currenPokemonData: ', currentPokemonData);
     // console.log(next);
     // console.log(prev);
 
@@ -56,8 +56,8 @@ const PokemonList = () => {
                 })}
                 
                 <Modal isOpen={modalOpen} onRequestClose={handleModal}>
+                    <button id='close-button' onClick={handleModal}>close</button>
                     <PokemonModal currentPokemonData={currentPokemonData} />
-                    <button onClick={handleModal}>close</button>
                 </Modal>
                 <div className='pagination-button-container'>
                     <button className='pagination-button' onClick={changePrev}>previous</button>

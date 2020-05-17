@@ -14,7 +14,6 @@ export const PokemonProvider = (props) => {
     setPokemonList([])
     Axios.get( api || `https://pokeapi.co/api/v2/pokemon?limit=21`)
     .then(res => {
-      console.log('1st axios: ', res.data)
       setNext(res.data.next);
       setPrev(res.data.previous);
       res.data.results.map(item => {
