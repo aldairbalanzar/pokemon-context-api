@@ -1,12 +1,7 @@
 import React from 'react';
 
 const PokemonModal = ({ currentPokemonData }) => {
-    const { name, jName, types, img, stats, abilities } = currentPokemonData
-    //checks if pokemon is more than one type, if so... 
-    //it makes sure to add a '/' to better separate the two types
-    if(types.length > 1){
-        types[0].type.name = `${types[0].type.name}/`         
-    };
+    const { name, jName, types, img, stats, abilities } = currentPokemonData;
 
     return(
         <section>
@@ -55,15 +50,15 @@ const PokemonModal = ({ currentPokemonData }) => {
                     }}/>
 
                      {/* Pokemon Type */}
-                    <div style={{
+                     <div style={{
                     display: 'flex',
                     width: '100%',
                     justifyContent: 'center'
                     }}>
                         <p><strong>Type: </strong>{
-                        types.map(item => {
-                        return <span key={item.slot}>{item.type.name}</span>
-                        })
+                        types.length > 1
+                        ?<span>{types[0].type.name}/{types[1].type.name}</span>
+                        :<span>{types[0].type.name}</span>
                         }</p>
                     </div>
                     
@@ -117,5 +112,6 @@ const PokemonModal = ({ currentPokemonData }) => {
         </section>
     )
 }
+
 
 export default PokemonModal;
