@@ -20,6 +20,9 @@ const PokemonList = () => {
     // console.log(next);
     // console.log(prev);
 
+    //function used change the pokemonList to the next set of pokemon
+    //using the current state of next as its initial axios call
+    //calls a toast notification that inidicates pokemonList is loading
     const changeNext = () => {
         fetchPokemonData(next)
         toast.info('Pokemon loaded.', {
@@ -28,6 +31,9 @@ const PokemonList = () => {
         })
     };
 
+    //function used change the pokemonList to the previous set set of pokemon
+    //using the current state of previous as its initial axios call
+    //calls a toast notification that inidicates pokemonList is loading
     const changePrev = () => {
         fetchPokemonData(prev)
         toast.info('Pokemon loaded.', {
@@ -36,21 +42,31 @@ const PokemonList = () => {
         })
     };
 
+    //function used to display/hide modal and set currentPokemonData (the one to be displayed on modal)
+    //to the one that was clicked and uses the id of clicked pokemon to fetch more data needed in the modal
     const handleModal = (pokemonId) => {
+        //variable that will hold clicked pokemon 
         let currentPokemon = {}
+        //only runs if modal is not displayed
         if(modalOpen === false){
+            //axios call to fetch additional data of clickced pokemon using the passed pokemonId
             Axios.get(`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`)
             .then(res => {
-                console.log(res.data)
+                //logic used to find clicked pokemon in pokemonList state
                 currentPokemon = pokemonList.find(item => item.id === pokemonId)
+                //sets currentPokemonData to be the one found in previous function
                 setCurrentPokemonData({
+                    //spreads in currentPokemon variable and creates a new key and
+                    // sets the value to pokemon's japanese name
                     ...currentPokemon,
                     jName: res.data.names[1].name
                 });
+                //after all data is fetched and set, the modal is opened up and displays data
                 setModalOpen(true)
             })
             .catch(err => console.log(err))
         } else {
+            //logic to close modal when open
             setModalOpen(false)
         }
     }
