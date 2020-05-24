@@ -1,6 +1,7 @@
 import React from 'react';
 
 const PokemonCard = ({data}) => {
+    // console.log(data)
     return(
         <div key={data.id}>
             <h2 className='pokemon-name'>{data.name}</h2>
