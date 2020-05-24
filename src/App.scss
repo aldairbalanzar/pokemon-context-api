@@ -21,7 +21,7 @@ body {
         .pokemon-card {
             width: 10%;
             height: auto;
-            background-color: rgb(230, 230, 230);
+            // background-color: rgb(230, 230, 230);
             margin: 2%;
             padding: 0 0 1%;
             border-radius: 9px;
@@ -78,6 +78,7 @@ body {
                 outline: none;
             }
             &:hover {
+                cursor: pointer;
                 background-color: lightgrey;
                 transition: .2s
             }

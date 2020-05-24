@@ -1,11 +1,11 @@
 import React from 'react';
 
 const PokemonModal = ({ currentPokemonData }) => {
-    const { name, jName, types, img, stats, abilities } = currentPokemonData;
+    // console.log(currentPokemonData)
+    const { name, jName, types, img, stats, abilities, sprites } = currentPokemonData;
 
     return(
         <section>
-            
             <div style={{
             width: '90%',
             margin: '2% auto 0',
@@ -61,6 +61,8 @@ const PokemonModal = ({ currentPokemonData }) => {
                         :<span>{types[0].type.name}</span>
                         }</p>
                     </div>
+
+                    <img src={sprites.front_default} alt=""/>
                     
                     {/* Pokemon Stats */}
                     <p style={{
@@ -106,7 +108,6 @@ const PokemonModal = ({ currentPokemonData }) => {
                             </p>
                         )
                     })}
-
                 </div>
             </div>
         </section>
