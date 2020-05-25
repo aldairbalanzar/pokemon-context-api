@@ -42,6 +42,102 @@ const PokemonList = () => {
         })
     };
 
+    //sets the border color of a card based on the pokemon's type(s)
+    const setBorderColor = (types) => {
+        let border = {};
+        const typeBorder = {
+            normal: '3px solid rgba(153,152,152, .55)',
+            flying: '3px solid rgba(121,164,255, .55)',
+            fire: '3px solid rgba(250,85,67, .55)',
+            poison: '3px solid rgba(165,90,156, .55)',
+            psychic: 'rgba(250,101,181, .55)',
+            grass: '3px solid rgba(250,101,181, .55)',
+            ground: '3px solid rgba(238,207,100, .55)',
+            ice: '3px solid rgba(238,207,90, .55)',
+            rock: '3px solid rgba(238,207,90, .55)',
+            dragon: '3px solid rgba(138,118,255, .55)',
+            water: '3px solid rgba(86,173,255, .55)',
+            bug: '3px solid rgba(195,210,31, .55)',
+            dark: '3px solid rgba(142,105,86, .55)',
+            fighting: '3px solid rgba(170,89,69, .55)',
+            ghost: '3px solid rgba(119,115,21, .55)',
+            steel: '3px solid rgba(195,193,218, .55)',
+            electric: '3px solid rgba(254,232,66, .55)',
+            fairy: '3px solid rgba(250,173,255, .55)'
+        }
+        // if(types.length > 1) {
+        //     console.log(types)
+        //     types.map(type => {
+        //         if(type.slot === 1) {
+        //             switch(type.name){
+        //                 case 'normal' : border = {
+        //                     borderTop: typeBorder.normal,
+        //                     borderLeft: typeBorder.normal
+        //                 }
+        //                 case 'flying' : border = {
+        //                     borderTop: typeBorder.flying,
+        //                     borderLeft: typeBorder.flying
+        //                 }
+        //                 return border
+        //             }
+        //         }else {
+
+        //         }
+        //     })
+        // }else {
+            switch(types[0].type.name){
+                case 'normal' : return border = {
+                border: typeBorder.normal
+                    }
+                case 'flying' : return border = {
+                border: typeBorder.flying
+                    }
+                case 'fire' : return border = {
+                border: typeBorder.fire
+                    }
+                case 'poison' : return border = {
+                    border: typeBorder.poison
+                    }
+                case 'psychic' : return border = {
+                    border: typeBorder.psychic
+                    }
+                case 'grass' : return border = {
+                    border: typeBorder.grass
+                    }
+                case 'ground' : return border = {
+                    border: typeBorder.ground
+                    }
+                case 'ice' : return border = {
+                    border: typeBorder.ice
+                    }
+                case 'water' : return border = {
+                    border: typeBorder.water
+                    }
+                case 'bug' : return border = {
+                    border: typeBorder.bug
+                    }
+                case 'dark' : return border = {
+                    border: typeBorder.dark
+                    }
+                case 'fighting' : return border = {
+                    border: typeBorder.fighting
+                    }
+                case 'ghost' : return border = {
+                    border: typeBorder.ghost
+                    }
+                case 'steel' : return border = {
+                    border: typeBorder.steel
+                    }
+                case 'electric' : return border = {
+                    border: typeBorder.electric
+                    }
+                case 'fairy' : return border = {
+                    border: typeBorder.fairy
+                    }
+            // }
+        }
+    }
+
     //function used to display/hide modal and set currentPokemonData (the one to be displayed on modal)
     //to the one that was clicked and uses the id of clicked pokemon to fetch more data needed in the modal
     const handleModal = (pokemonId) => {
@@ -76,7 +172,7 @@ const PokemonList = () => {
             <section className='pokemon-list'>
                 {pokemonList.map(data => {
                     return(
-                        <div className='pokemon-card' onClick={() => handleModal(data.id)} key={data.id}>
+                        <div className='pokemon-card' style={setBorderColor(data.types)} onClick={() => handleModal(data.id)} key={data.id}>
                             <PokemonCard data={data} key={data.id}/>
                         </div>
                     )

@@ -16,7 +16,7 @@ export const PokemonProvider = (props) => {
     //empties pokemonList (necessary for pagination)
     setPokemonList([])
     //fetches first 21 pokemon urls
-    Axios.get( api || `https://pokeapi.co/api/v2/pokemon?limit=21`)
+    Axios.get( api || `https://pokeapi.co/api/v2/pokemon?limit=30`)
     .then(res => {
       //sets the state for the next and previous pokemon urls (necessary for pagination)
       setNext(res.data.next);

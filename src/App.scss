@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(240, 240, 240);
 }
 
 .App {
@@ -21,16 +21,16 @@ body {
         .pokemon-card {
             width: 10%;
             height: auto;
-            // background-color: rgb(230, 230, 230);
+            background-color: rgb(226, 226, 226);
             margin: 2%;
             padding: 0 0 1%;
             border-radius: 9px;
-            box-shadow: 3px 3px 2px rgba(28, 38, 73, 0.3);
+            box-shadow: 4px 4px 3px rgba(22, 50, 82, 0.3);
             transition: .35s;
             &:hover {
                 cursor: pointer;
                 transform: scale(1.1);
-                box-shadow: 10px 8px 5px rgba(28, 38, 73, 0.225);
+                box-shadow: 11px 9px 6px rgba(22, 50, 82, 0.225);
                 transition: .2s;
             }
             img {
