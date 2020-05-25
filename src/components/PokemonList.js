@@ -50,7 +50,7 @@ const PokemonList = () => {
             flying: '3px solid rgba(121,164,255, .4)',
             fire: '3px solid rgba(250,85,67, .4)',
             poison: '3px solid rgba(165,90,156, .4)',
-            psychic: 'rgba(250,101,181, .4)',
+            psychic: '3px solid rgba(250,101,181, .4)',
             grass: '3px solid rgba(250,101,181, .4)',
             ground: '3px solid rgba(238,207,100, .4)',
             ice: '3px solid rgba(238,207,90, .4)',
