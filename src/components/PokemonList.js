@@ -46,24 +46,24 @@ const PokemonList = () => {
     const setBorderColor = (types) => {
         let border = {};
         const typeBorder = {
-            normal: '3px solid rgba(153,152,152, .55)',
-            flying: '3px solid rgba(121,164,255, .55)',
-            fire: '3px solid rgba(250,85,67, .55)',
-            poison: '3px solid rgba(165,90,156, .55)',
-            psychic: 'rgba(250,101,181, .55)',
-            grass: '3px solid rgba(250,101,181, .55)',
-            ground: '3px solid rgba(238,207,100, .55)',
-            ice: '3px solid rgba(238,207,90, .55)',
-            rock: '3px solid rgba(238,207,90, .55)',
-            dragon: '3px solid rgba(138,118,255, .55)',
-            water: '3px solid rgba(86,173,255, .55)',
-            bug: '3px solid rgba(195,210,31, .55)',
-            dark: '3px solid rgba(142,105,86, .55)',
-            fighting: '3px solid rgba(170,89,69, .55)',
-            ghost: '3px solid rgba(119,115,21, .55)',
-            steel: '3px solid rgba(195,193,218, .55)',
-            electric: '3px solid rgba(254,232,66, .55)',
-            fairy: '3px solid rgba(250,173,255, .55)'
+            normal: '3px solid rgba(153,152,152, .4)',
+            flying: '3px solid rgba(121,164,255, .4)',
+            fire: '3px solid rgba(250,85,67, .4)',
+            poison: '3px solid rgba(165,90,156, .4)',
+            psychic: 'rgba(250,101,181, .4)',
+            grass: '3px solid rgba(250,101,181, .4)',
+            ground: '3px solid rgba(238,207,100, .4)',
+            ice: '3px solid rgba(238,207,90, .4)',
+            rock: '3px solid rgba(238,207,90, .4)',
+            dragon: '3px solid rgba(138,118,255, .4)',
+            water: '3px solid rgba(86,173,255, .4)',
+            bug: '3px solid rgba(195,210,31, .4)',
+            dark: '3px solid rgba(142,105,86, .4)',
+            fighting: '3px solid rgba(170,89,69, .4)',
+            ghost: '3px solid rgba(119,115,21, .4)',
+            steel: '3px solid rgba(195,193,218, .4)',
+            electric: '3px solid rgba(254,232,66, .4)',
+            fairy: '3px solid rgba(250,173,255, .4)'
         }
         // if(types.length > 1) {
         //     console.log(types)
