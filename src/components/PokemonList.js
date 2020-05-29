@@ -47,19 +47,19 @@ const PokemonList = () => {
         let border = {};
         const typeBorder = {
             normal: '3px solid rgba(153,152,152, .45)',
-            flying: '3px solid rgba(121,164,255, .45)',
-            fire: '3px solid rgba(250,85,67, .45)',
+            flying: '3px solid rgba(115,150,250, .45)',
+            fire: '3px solid rgba(255,60,60, .45)',
             poison: '3px solid rgba(165,90,156, .45)',
             psychic: '3px solid rgba(250,101,181, .45)',
-            grass: '3px solid rgba(250,101,181, .45)',
-            ground: '3px solid rgba(238,207,100, .45)',
+            grass: '3px solid rgba(158,222,79, .45)',
+            ground: '3px solid rgba(248,180,80, .45)',
             ice: '3px solid rgba(238,207,90, .45)',
             rock: '3px solid rgba(204,187,113, .45)',
-            dragon: '3px solid rgba(138,118,255, .45)',
+            dragon: '3px solid rgba(140,110,255, .45)',
             water: '3px solid rgba(86,173,255, .45)',
             bug: '3px solid rgba(195,210,31, .45)',
             dark: '3px solid rgba(142,105,86, .45)',
-            fighting: '3px solid rgba(170,89,69, .45)',
+            fighting: '3px solid rgba(180,84,69, .45)',
             ghost: '3px solid rgba(119,115,21, .45)',
             steel: '3px solid rgba(195,193,218, .45)',
             electric: '3px solid rgba(254,232,66, .45)',
@@ -112,6 +112,9 @@ const PokemonList = () => {
                     }
                 case 'rock' : return border = {
                     border: typeBorder.rock
+                    }
+                case 'dragon' : return border = {
+                    border: typeBorder.dragon
                     }
                 case 'water' : return border = {
                     border: typeBorder.water
