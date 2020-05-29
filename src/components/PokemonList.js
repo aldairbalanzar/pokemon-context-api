@@ -46,24 +46,24 @@ const PokemonList = () => {
     const setBorderColor = (types) => {
         let border = {};
         const typeBorder = {
-            normal: '3px solid rgba(153,152,152, .4)',
-            flying: '3px solid rgba(121,164,255, .4)',
-            fire: '3px solid rgba(250,85,67, .4)',
-            poison: '3px solid rgba(165,90,156, .4)',
-            psychic: '3px solid rgba(250,101,181, .4)',
-            grass: '3px solid rgba(250,101,181, .4)',
-            ground: '3px solid rgba(238,207,100, .4)',
-            ice: '3px solid rgba(238,207,90, .4)',
-            rock: '3px solid rgba(238,207,90, .4)',
-            dragon: '3px solid rgba(138,118,255, .4)',
-            water: '3px solid rgba(86,173,255, .4)',
-            bug: '3px solid rgba(195,210,31, .4)',
-            dark: '3px solid rgba(142,105,86, .4)',
-            fighting: '3px solid rgba(170,89,69, .4)',
-            ghost: '3px solid rgba(119,115,21, .4)',
-            steel: '3px solid rgba(195,193,218, .4)',
-            electric: '3px solid rgba(254,232,66, .4)',
-            fairy: '3px solid rgba(250,173,255, .4)'
+            normal: '3px solid rgba(153,152,152, .45)',
+            flying: '3px solid rgba(121,164,255, .45)',
+            fire: '3px solid rgba(250,85,67, .45)',
+            poison: '3px solid rgba(165,90,156, .45)',
+            psychic: '3px solid rgba(250,101,181, .45)',
+            grass: '3px solid rgba(250,101,181, .45)',
+            ground: '3px solid rgba(238,207,100, .45)',
+            ice: '3px solid rgba(238,207,90, .45)',
+            rock: '3px solid rgba(204,187,113, .45)',
+            dragon: '3px solid rgba(138,118,255, .45)',
+            water: '3px solid rgba(86,173,255, .45)',
+            bug: '3px solid rgba(195,210,31, .45)',
+            dark: '3px solid rgba(142,105,86, .45)',
+            fighting: '3px solid rgba(170,89,69, .45)',
+            ghost: '3px solid rgba(119,115,21, .45)',
+            steel: '3px solid rgba(195,193,218, .45)',
+            electric: '3px solid rgba(254,232,66, .45)',
+            fairy: '3px solid rgba(250,173,255, .45)'
         }
         // if(types.length > 1) {
         //     console.log(types)
@@ -109,6 +109,9 @@ const PokemonList = () => {
                     }
                 case 'ice' : return border = {
                     border: typeBorder.ice
+                    }
+                case 'rock' : return border = {
+                    border: typeBorder.rock
                     }
                 case 'water' : return border = {
                     border: typeBorder.water
