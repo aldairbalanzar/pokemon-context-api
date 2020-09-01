@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Modal from 'react-modal';
 import PokemonCard from '../components/PokemonCard';
 import PokemonModal from '../components/PokemonModal';
-import '../App.scss';
+import './App.scss';
 
 Modal.setAppElement('#root')
 toast.configure()
@@ -65,26 +65,6 @@ const PokemonList = () => {
             electric: '3px solid rgba(254,232,66, .45)',
             fairy: '3px solid rgba(250,173,255, .45)'
         }
-        // if(types.length > 1) {
-        //     console.log(types)
-        //     types.map(type => {
-        //         if(type.slot === 1) {
-        //             switch(type.name){
-        //                 case 'normal' : border = {
-        //                     borderTop: typeBorder.normal,
-        //                     borderLeft: typeBorder.normal
-        //                 }
-        //                 case 'flying' : border = {
-        //                     borderTop: typeBorder.flying,
-        //                     borderLeft: typeBorder.flying
-        //                 }
-        //                 return border
-        //             }
-        //         }else {
-
-        //         }
-        //     })
-        // }else {
             switch(types[0].type.name){
                 case 'normal' : return border = {
                 border: typeBorder.normal
@@ -140,7 +120,6 @@ const PokemonList = () => {
                 case 'fairy' : return border = {
                     border: typeBorder.fairy
                     }
-            // }
         }
     }
 
