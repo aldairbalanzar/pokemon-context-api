@@ -8,8 +8,7 @@ The two APIs consumed:
 * [Pokeres](https://pokeres.bastionbot.org/) - for official pokémon artwork if available. 
 
 ## Installation:
-Upon cloning repo, run the following command to install dependencies: 
-# npm i
+Upon cloning repo, run the following command to install dependencies: `npm i`
 
 ## Dependencies:
     React
