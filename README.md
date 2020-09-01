@@ -7,11 +7,11 @@ The two APIs consumed:
     * [PokeAPI](https://pokeapi.co/) - for general pokémon data and sprites.
     * [Pokeres](https://pokeres.bastionbot.org/) - for official pokémon artwork if available. 
 
-# Installation: 2
+## Installation:
     Upon cloning repo, run the following command to install dependencies
     `npm i`
 
-# Dependencies: 2
+## Dependencies:
     React
     React-DOM
     React-Modal
@@ -22,5 +22,5 @@ The two APIs consumed:
     Node-Sass
     React-Toastify
 
-# License: 2
+## License:
     [MIT](https://choosealicense.com/licenses/mit/)
