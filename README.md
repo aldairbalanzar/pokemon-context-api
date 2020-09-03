@@ -1,5 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<<<<<<< HEAD
 ## Available Scripts
 
 In the project directory, you can run:
@@ -66,3 +67,29 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+=======
+# Pokédex Web App
+The Pokédex Web App is a React application that consumes data from to APIs and allows a user to general data such as base stats of their favorite Pokémon that span from various generations. 
+
+The two APIs consumed: 
+    * [PokeAPI](https://pokeapi.co/) - for general pokémon data and sprites.
+    * [Pokeres](https://pokeres.bastionbot.org/) - for official pokémon artwork if available. 
+
+## Installation:
+Upon cloning repo, run the following command to install dependencies: 
+# npm i
+
+## Dependencies:
+    React
+    React-DOM
+    React-Modal
+    React-Scripts
+    React Testing Library
+    Material-UI
+    Axios
+    Node-Sass
+    React-Toastify
+
+## License:
+    [MIT](https://choosealicense.com/licenses/mit/)
+>>>>>>> 262bfa5a352f6ba9daf96221d5242579d5438805
