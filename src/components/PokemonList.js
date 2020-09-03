@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Modal from 'react-modal';
 import PokemonCard from '../components/PokemonCard';
 import PokemonModal from '../components/PokemonModal';
-import './App.scss';
+import '../App.scss';
 
 Modal.setAppElement('#root')
 toast.configure()
